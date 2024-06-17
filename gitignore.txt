@@ -1,0 +1,5 @@
+*.pickle
+*.h5
+*.pth
+.ipynb_checkpoints/
+__pycache__/
