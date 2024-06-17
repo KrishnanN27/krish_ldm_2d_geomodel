@@ -36,7 +36,7 @@ train_split       = 0.7
 val_split         = 0.2
 test_split        = 1 - train_split - val_split
 
-dataset_dir        = '/oak/stanford/schools/ees/lou/gdifede/dms/ddpm-channels-64_tricat_cond_tilt2/64_64_levee_dataset'
+dataset_dir        = './data/diffusers_dataset'
 imgs_dir           =  './imgs/'
 
 if not os.path.exists(imgs_dir):
