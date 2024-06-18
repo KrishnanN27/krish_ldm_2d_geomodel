@@ -1,19 +1,21 @@
-## Import packages
 
-# General imports
+'''
+File: prepare_dataset.py
+Author: Guido Di Federico
+Description: Used for loading a diffusers "dataset"-like dataset of geomodels and save it as .jpg images
+Note: requires Python package "datasets" by HuggingFace to open dataset
+'''
+
+# Import packages
+
 import os
 import numpy as np
 import cv2
-from datasets import Datasets
+from datasets import Dataset
 
-# Load dataset
-train_split       = 0.7
-val_split         = 0.2
-test_split        = 1 - train_split - val_split
-
-# Set directories for diffusers dataset and jpg images folder
+# Set directories for diffusers dataset and .jpg images folder
 dataset_dir       = './data/diffusers_dataset/'
-imgs_dir          =  './imgs/'
+imgs_dir          = './imgs/'
 
 if not os.path.exists(imgs_dir):
     os.makedirs(imgs_dir)
@@ -26,3 +28,4 @@ geomodels_numpy   = np.array([np.array(image) for image in diffusers_dataset])
 for i in range(len(diffusers_dataset)):
     img_path = os.path.join(imgs_dir, f"image_{i}.jpeg")
     cv2.imwrite(img_path, geomodels_numpy[i,:,:])
+
