@@ -17,7 +17,9 @@ Code implementations are based on the following repositories:
 - [monai](https://github.com/Project-MONAI/tutorials/tree/main/generative)
 
 ## Software requiremenets
-Running the scripts requires the libraries `datasets`,  `diffusers`,  `monai`,  `generative `. This workflow is tested with Python 3.9 and PyTorch 1.8 (CPU/GPU).
+Running the scripts requires the libraries `datasets`,  `diffusers`,  `monai`,  `generative`.
+\
+This workflow is tested with Python 3.9 and PyTorch 1.8 (CPU/GPU).
 
 ## Contact
 Guido Di Federico, Louis J. Durlofsky  
