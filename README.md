@@ -8,8 +8,8 @@ Geological parameterization entails the representation of a geomodel using a sma
 Our application involves conditional 2D three-facies (channel-levee-mud) systems. The LDM can provide realizations that are visually consistent with samples from geomodeling software. General agreement between the diffusion-generated models and reference realizations can be observed through quantitative metrics involving spatial and flow-response statistics. The smoothness of the parameterization method can be assessed through latent-space interpolation tests. The LDM can then used for ensemble-based data assimilation. Significant uncertainty reduction, posterior P<sub>10</sub>-P<sub>90</sub> forecasts that generally bracket observed data, and consistent posterior geomodels, can be achieved.
 
 ## Structure
-- `scr/` - Directory to store dataset for variational autoencoder (VAE) training and U-net training `.py` scripts.
-- `data/` - Directory to store training dataset used in this study (2D, three-facies channelized geomodels). Dataset is stored as `.png` images and NumPy `.npy` file
+- `scripts/` - Directory to store dataset for data preparation, variational autoencoder (VAE) training and U-net training `.py` scripts.
+- `data/` - Directory to store training dataset used in this study (2D, three-facies channelized geomodels). Dataset is stored as datasets.Dataset folder (`diffusers_dataset`) 
 - `testing/` - Directory to store reference (geomodeling software-generated) and LDM-generated ensembles used for flow simulations and history matching. Both are stored as `.npy` files.
 
 ## Additional resources
