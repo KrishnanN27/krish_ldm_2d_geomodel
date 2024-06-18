@@ -7,7 +7,6 @@ Note: requires Python package "datasets" by HuggingFace to open dataset
 '''
 
 # Import packages
-
 import os
 import numpy as np
 import cv2
