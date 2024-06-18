@@ -9,7 +9,7 @@ Our application involves conditional 2D three-facies (channel-levee-mud) systems
 
 ## Structure
 - `scripts/` - Directory to store dataset for data preparation, variational autoencoder (VAE) training and U-net training `.py` scripts.
-- `data/` - Directory to store training dataset used in this study (2D, three-facies channelized geomodels). Dataset is stored as datasets.Dataset folder (`diffusers_dataset`) 
+- `data/` - Directory to store training dataset used in this study (2D, three-facies channelized geomodels). Dataset is stored as datasets.Dataset folder (`diffusers_dataset/`) 
 - `testing/` - Directory to store reference (geomodeling software-generated) and LDM-generated ensembles used for flow simulations and history matching. Both are stored as `.npy` files.
 
 Code implementations are based on the following repositories:
