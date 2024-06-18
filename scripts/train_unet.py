@@ -4,7 +4,7 @@
 File: train_vae.py
 Author: Guido Di Federico (code is based on the implementation available at https://github.com/Project-MONAI/tutorials/tree/main/generative and https://github.com/huggingface/diffusers/)
 Description: Script to train a U-net to learn the de-noising process in the latent space of latent diffusion models
-Note: requires Python package "monai" and "generative" to load 2D U-net model and dataloaders
+Note: requires Python package "monai" or "monai-generative" to load 2D U-net model and dataloaders
 '''
 
 
