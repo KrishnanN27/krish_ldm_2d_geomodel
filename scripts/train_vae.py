@@ -181,7 +181,7 @@ for epoch in range(n_epochs):
     epoch_recon_losses.append(epoch_loss / (step + 1))
     epoch_gen_losses.append(gen_epoch_loss / (step + 1))
     if (epoch + 1) % 10 == 0:
-        torch.save(autoencoderkl.state_dict(), f{trained_vae_dir} + '/vae_epoch_{epoch + 1}.pt')
+        torch.save(autoencoderkl.state_dict(), f'{trained_vae_dir} + /vae_epoch_{epoch + 1}.pt')
 
     if (epoch + 1) % val_interval == 0:
         autoencoderkl.eval()
