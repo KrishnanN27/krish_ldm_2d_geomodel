@@ -116,9 +116,9 @@ unet = DiffusionModelUNet(
     in_channels=1,
     out_channels=1,
     num_res_blocks=1,
-    num_channels=(128, 256, 512),
+    num_channels=(64, 128, 256),
     attention_levels=(False, True, True),
-    num_head_channels=(0, 128, 256),
+    num_head_channels=(0, 64, 128),
 )
 unet.to(device)
 
