@@ -28,3 +28,4 @@ Department of Energy Science & Engineering, Stanford University
 \
 Contact: gdifede@stanford.edu
 
+![Alt text](noising.drawio.jpg?raw=true "Title")
