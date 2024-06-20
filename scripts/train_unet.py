@@ -1,7 +1,7 @@
 # Train U-net
 
 '''
-File: train_vae.py
+File: train_unet.py
 Author: Guido Di Federico (code is based on the implementation available at https://github.com/Project-MONAI/tutorials/tree/main/generative and https://github.com/huggingface/diffusers/)
 Description: Script to train a U-net to learn the de-noising process in the latent space of latent diffusion models
 Note: requires Python package "monai" or "monai-generative" to load 2D U-net model and dataloaders
@@ -135,10 +135,11 @@ scheduler = DDPMScheduler(num_train_timesteps=1000, schedule="linear_beta", beta
 #scheduler = DDIMScheduler(num_train_timesteps=100, schedule="linear_beta", beta_start=0.0001, beta_end=0.02)
 
 # Compute scaling factor for non-perfectly Gaussian VAE latent spaces
-check_data = first(m_train_loader)
+example_data = first(m_train_loader)
+
 with torch.no_grad():
     with autocast(enabled=True):
-        z = autoencoderkl.encode_stage_2_inputs(check_data["image"].to(device))
+        z = autoencoderkl.encode_stage_2_inputs(example_data["image"].to(device))
 
 scale_factor = 1 / torch.std(z)
 
@@ -147,16 +148,17 @@ inferer = LatentDiffusionInferer(scheduler, scale_factor=scale_factor)
 optimizer = torch.optim.Adam(unet.parameters(), lr=1e-4)
 
 
-# Train the U-net on the noise predicting function
 
 # Training parameters
-unet = unet.to(device)
-n_epochs = 200
-val_interval = 10
+n_epochs      = 200
+val_interval  = 10
 save_interval = 10
-epoch_losses = []
-val_losses = []
-scaler = GradScaler()
+
+# Train the U-net on the noise predicting function
+
+epoch_losses  = []
+val_losses    = []
+scaler        = GradScaler()
 
 for epoch in range(n_epochs):
     unet.train()
