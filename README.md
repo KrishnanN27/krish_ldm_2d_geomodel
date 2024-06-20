@@ -33,15 +33,14 @@ Contact: gdifede@stanford.edu
   <figcaption>Noising and denoising process on a geomodel</figcaption>
 </figure>
 
-<div style="display: flex; justify-content: space-between;">
-  <figure style="margin: 0 10px;">
-    <img src="./pics/random_samples_petrel.jpg?raw=true" alt="Alt text 1" title="Title 1" width="300"/>
-    <figcaption>Caption for the first image</figcaption>
-  </figure>
-  <figure style="margin: 0 10px;">
-    <img src="./pics/random_samples_generated.jpg?raw=true" alt="Alt text 2" title="Title 2" width="300"/>
-    <figcaption>Caption for the second image</figcaption>
-  </figure>
-</div>
+<figure>
+  <img src="./pics/vae.drawio.jpg?raw=true" alt="Alt text" title="Title" width="500"/>
+  <figcaption>Noising and denoising process on a geomodel</figcaption>
+</figure>
+
+<figure>
+  <img src="./pics/unet.drawio.jpg?raw=true" alt="Alt text" title="Title" width="500"/>
+  <figcaption>Noising and denoising process on a geomodel</figcaption>
+</figure>
 
 
