@@ -39,8 +39,6 @@ device = torch.device("cuda")
 # Load dataset
 geomodels_dataset = [{"image": imgs_dir + img} for  img in os.listdir(imgs_dir)][:4000]
 N_data            = len(geomodels_dataset)
-image_size        = 64
-
 
 # Split dataset
 train_split       = 0.7
@@ -106,9 +104,9 @@ autoencoderkl = autoencoderkl.to(device)
 # Train the VAE on three loss terms: (1) reconstruction loss, (2) K-L divergence loss, (3) hard data facies loss
 
 # Training parameters
-n_epochs      = 100
-val_interval  = 10
-save_interval = 1
+n_epochs      = 10
+val_interval  = 5
+save_interval = 10
 kl_weight     = 1e-6
 hd_weight     = 1e1
 
