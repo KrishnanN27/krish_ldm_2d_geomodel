@@ -33,7 +33,7 @@ from generative.networks.nets import AutoencoderKL, DiffusionModelUNet
 from generative.networks.schedulers import DDPMScheduler, DDIMScheduler
 
 # Set directories
-imgs_dir          =  './imgs/'
+imgs_dir          =  '../data/imgs/'
 
 
 # Load dataset
@@ -112,6 +112,9 @@ autoencoderkl = autoencoderkl.to(device)
 
 # Train the VAE on three loss terms: (1) reconstruction loss, (2) K-L divergence loss, (3) hard data facies loss
 trained_vae_dir = './trained_vae/'
+if not os.path.exists(trained_vae_dir):
+    os.makedirs(trained_vae_dir)
+    
 
 
 # Training parameters
@@ -126,7 +129,8 @@ epoch_disc_losses = []
 val_recon_losses = []
 intermediary_images = []
 num_example_images = 4
-
+kl_weight = 1e-6
+lambda_hd = 0
 
 # Gradient parameters (optimizer and scaler)
 optimizer_g = torch.optim.Adam(autoencoderkl.parameters(), lr=1e-4)
@@ -153,7 +157,6 @@ for epoch in range(n_epochs):
             reconstruction_hd_vector =  torch.stack(reconstruction_hd, dim=0).flatten()
             images_hd = [images[...,loc[0],loc[1]] for loc in hard_data_locations]
             images_hd_vector = torch.stack(images_hd, dim=0).flatten()
-            lambda_hd = 100
             hd_loss =  F.mse_loss(images_hd_vector * lambda_hd, reconstruction_hd_vector * lambda_hd)
 
             recons_loss = F.l1_loss(reconstruction.float(), images.float())
