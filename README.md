@@ -35,12 +35,16 @@ Contact: gdifede@stanford.edu
 
 <figure>
   <img src="./pics/vae.drawio.jpg?raw=true" alt="Alt text" title="Title" width="500"/>
-  <figcaption>Noising and denoising process on a geomodel</figcaption>
+  <figcaption>VAE component of the diffusion model</figcaption>
 </figure>
 
 <figure>
-  <img src="./pics/unet.drawio.jpg?raw=true" alt="Alt text" title="Title" width="500"/>
-  <figcaption>Noising and denoising process on a geomodel</figcaption>
+  <img src="./pics/ecmor_ldm.drawio.jpg?raw=true" alt="Alt text" title="Title" width="500"/>
+  <figcaption>Denoising U-net component of the diffusion model</figcaption>
 </figure>
 
+<figure>
+  <img src="./pics/interpolation.jpg?raw=true" alt="Alt text" title="Title" width="500"/>
+  <figcaption>Interpolation test on a geomodel using LDM</figcaption>
+</figure>
 
