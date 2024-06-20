@@ -27,22 +27,22 @@ Guido Di Federico, Louis J. Durlofsky
 Department of Energy Science & Engineering, Stanford University 
 \
 Contact: gdifede@stanford.edu
-<figure style="text-align: center; margin-bottom: 20px;">
+<figure style="text-align: center; margin-bottom: 50px;">
   <img src="./pics/noising.drawio.jpg?raw=true" alt="Alt text" title="Title" width="500"/>
   <figcaption>Noising and denoising process on a geomodel</figcaption>
 </figure>
 
-<figure style="text-align: center; margin-bottom: 20px;">
+<figure style="text-align: center; margin-bottom: 50px;">
   <img src="./pics/vae.drawio.jpg?raw=true" alt="Alt text" title="Title" width="500"/>
   <figcaption>VAE component of the diffusion model</figcaption>
 </figure>
 
-<figure style="text-align: center; margin-bottom: 20px;">
+<figure style="text-align: center; margin-bottom: 50px;">
   <img src="./pics/ecmor_ldm.drawio.jpg?raw=true" alt="Alt text" title="Title" width="500"/>
   <figcaption>Denoising U-net component of the diffusion model</figcaption>
 </figure>
 
-<figure style="text-align: center; margin-bottom: 20px;">
+<figure style="text-align: center; margin-bottom: 50px;">
   <img src="./pics/interpolation.jpg?raw=true" alt="Alt text" title="Title" width="500"/>
   <figcaption>Interpolation test on a geomodel using LDM</figcaption>
 </figure>
