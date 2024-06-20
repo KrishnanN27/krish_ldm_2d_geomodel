@@ -30,11 +30,18 @@ Contact: gdifede@stanford.edu
 
 <figure>
   <img src="./pics/noising.drawio.jpg?raw=true" alt="Alt text" title="Title" width="500"/>
-  <figcaption>This is the caption for the image</figcaption>
+  <figcaption>Noising and denoising process on a geomodel</figcaption>
 </figure>
 
-<figure>
-  <img src="./pics/noising.drawio.jpg?raw=true" alt="Alt text" title="Title" width="500"/>
-  <figcaption>This is the caption for the image</figcaption>
-</figure>
+<div style="display: flex; justify-content: space-between;">
+  <figure style="margin: 0 10px;">
+    <img src="./pics/random_samples_petrel.jpg?raw=true" alt="Alt text 1" title="Title 1" width="300"/>
+    <figcaption>Caption for the first image</figcaption>
+  </figure>
+  <figure style="margin: 0 10px;">
+    <img src="./pics/random_samples_generated.jpg?raw=true" alt="Alt text 2" title="Title 2" width="300"/>
+    <figcaption>Caption for the second image</figcaption>
+  </figure>
+</div>
+
 
