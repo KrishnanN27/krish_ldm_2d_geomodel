@@ -27,6 +27,8 @@ Guido Di Federico, Louis J. Durlofsky
 Department of Energy Science & Engineering, Stanford University 
 \
 Contact: gdifede@stanford.edu
+
+## Examples
 <figure style="text-align: center; margin-bottom: 100px;">
   <img src="./pics/noising.drawio.jpg?raw=true" alt="Alt text" title="Title" width="500"/>
   <figcaption>Noising and denoising process on a geomodel</figcaption>
