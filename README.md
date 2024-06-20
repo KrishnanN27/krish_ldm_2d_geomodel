@@ -28,5 +28,5 @@ Department of Energy Science & Engineering, Stanford University
 \
 Contact: gdifede@stanford.edu
 
-![Alt text](./pics/noising.drawio.jpg?raw=true "Title") <img src="./pics/noising.drawio.jpg?raw=true" alt="Alt text" title="Title" width="500"/>
+<img src="./pics/noising.drawio.jpg?raw=true" alt="Alt text" title="Title" width="500"/>
 
