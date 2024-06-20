@@ -12,29 +12,21 @@ Note: requires Python package "monai" or "monai-generative" to load VAE model an
 # General imports
 import os
 import numpy as np
-import shutil
-import tempfile
 import torch
 import torch.nn.functional as F
 from torch.cuda.amp import GradScaler, autocast
 from tqdm import tqdm
-from sklearn.metrics import mean_squared_error
-from PIL import Image 
-import cv2
-import matplotlib.pyplot as plt 
 
 # Monai and diffusers modules
 import monai
 from monai import transforms
 from monai.data import DataLoader, Dataset
 from monai.utils import first, set_determinism
-from generative.inferers import LatentDiffusionInferer
 from generative.networks.nets import AutoencoderKL, DiffusionModelUNet
-from generative.networks.schedulers import DDPMScheduler, DDIMScheduler
 
 # Set directories
 imgs_dir          =  '../data/imgs/'
-trained_vae_dir = './trained_vae/'
+trained_vae_dir = '../trained_vae/'
 
 if not os.path.exists(trained_vae_dir):
     os.makedirs(trained_vae_dir)
@@ -98,12 +90,7 @@ m_test_ds = Dataset(data=m_test_list, transform=val_transforms)
 m_test_loader = DataLoader(m_test_ds, batch_size=batch_size, shuffle=True)
 
 # Set hard data conditioning points (first two coordinates are (x,y) points and third coordinate the pixel value)
-hard_data_locations = np.array([[7,7, 255], 
-                                [7,31, 255],
-                                [7,55, 255],
-                                [55,7,255],
-                                [55,31,255],
-                                [55,55,255]])
+hard_data_locations = np.array([[7,7], [7,31], [7,55], [55,7], [55,31], [55,55]])
 
 
 # Initiate variational autoendocder (VAE) model
@@ -143,7 +130,7 @@ for epoch in range(n_epochs):
     epoch_kl_loss = 0
     epoch_hd_loss = 0
     epoch_loss = 0
-    progress_bar = tqdm(enumerate(m_train_loader), total=len(m_train_loader), ncols=110)
+    progress_bar = tqdm(enumerate(m_train_loader), total=len(m_train_loader), ncols=100)
     progress_bar.set_description(f"Epoch {epoch}")
 
     for step, batch in progress_bar:
