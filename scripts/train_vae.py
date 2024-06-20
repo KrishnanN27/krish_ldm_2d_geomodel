@@ -1,4 +1,3 @@
-
 '''
 File: train_vae.py
 Author: Guido Di Federico (code is based on the implementation available at https://github.com/Project-MONAI/tutorials/tree/main/generative and https://github.com/huggingface/diffusers/)
