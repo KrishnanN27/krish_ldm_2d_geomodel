@@ -12,15 +12,15 @@ import cv2
 from datasets import Dataset
 
 # Set directories for dataset and .jpg images folder
-dataset_dir = '../data/diffusers_dataset/'
-imgs_dir = '../imgs/'
+dataset_dir = '../data/diffusers_dataset/tomo_2d_slices/'
+imgs_dir = '../data/imgs/'
 
 if not os.path.exists(imgs_dir):
     os.makedirs(imgs_dir)
-    
+
 # Load diffusers dataset and transform into NumPy
 diffusers_dataset = Dataset.load_from_disk(dataset_dir)['image']
-geomodels_numpy_rot = np.array([np.array(image) for image in diffusers_dataset]) 
+geomodels_numpy_rot = np.array([np.array(image) for image in diffusers_dataset])
 geomodels_numpy = np.rot90(np.flip(geomodels_numpy_rot, axis=2), k=-1, axes=(1, 2))
 
 # Transform every NumPy geomodel into .jpg image and save in folder
